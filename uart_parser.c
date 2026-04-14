@@ -78,7 +78,7 @@ void parse_byte(uint8_t incoming_byte)
             {
                 uint16_t speed = (uint16_t)((speed_high << 8) | speed_low);
 
-                printf("[VALID PACKET] Motor ID: 0x%02X | Speed: %d (0x%04X)\n",
+                printf("[VALID PACKET] Motor ID: 0x%02X | Speed: %u (0x%04X)\n",
                        motor_id, speed, speed);
             }
             else
