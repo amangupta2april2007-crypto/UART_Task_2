@@ -72,7 +72,7 @@ void parse_byte(uint8_t incoming_byte)
         }
         else
         {
-            uint8_t computed_checksum = motor_id & speed_high & speed_low;
+            uint8_t computed_checksum = motor_id ^ speed_high ^ speed_low;
 
             if (computed_checksum == incoming_byte)
             {
