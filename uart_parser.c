@@ -10,11 +10,11 @@ typedef enum {
     STATE_GOT_SPEED_LOW
 } parser_state_t;
 
-#define START_BYTE 0xBB
+#define START_BYTE 0xAA
 
 void parse_byte(uint8_t incoming_byte)
 {
-    parser_state_t current_state = STATE_WAIT_FOR_START;
+    static parser_state_t current_state = STATE_WAIT_FOR_START;
     static uint8_t motor_id    = 0;
     static uint8_t speed_high  = 0;
     static uint8_t speed_low   = 0;
